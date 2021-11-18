@@ -10,7 +10,6 @@ var app = ( function() {
 	var models = [];
 	var interactiveModel;
 	var toggleWireframeOn = true;
-	var cameraLocked = true;
 
 	var camera = {
 		// Initial position of the camera.
@@ -338,17 +337,6 @@ var app = ( function() {
 						if (camera.distance >1) {
 							camera.distance += 1 * deltaTranslate;
 						}
-					}
-					break;
-				
-				case ("L"):
-					cameraLocked = !cameraLocked;
-					if (camera.eye[1] < .74 && cameraLocked) {
-						camera.eye[1] = .85;
-						camera.center[1] = -.15;
-					}
-					if (camera.center[1] < 0 && cameraLocked) {
-						camera.center[1] = -.15;
 					}
 					break;
 			}
